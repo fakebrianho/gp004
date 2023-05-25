@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import './RenderMaterial'
 import './SimulationMaterial'
-import getDataTexture from './getDataTexture'
+import getDataTexture from './getDatatexture'
 // import { getDataTexture } from './getDataTexture'
 import { createPortal, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
