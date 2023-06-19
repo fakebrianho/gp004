@@ -1,0 +1,23 @@
+import '@/styles/globals.css'
+import { GlobalCanvas } from '@14islands/r3f-scroll-rig'
+import { CanvasProvider, useCanvasContext } from '@/components/ContextProvider'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { extend } from '@react-three/fiber'
+import { useRef } from 'react'
+import { useThree } from '@react-three/fiber'
+import { AnimatePresence } from 'framer-motion'
+import { useRouter } from 'next/router'
+import { Stats } from '@react-three/drei'
+export default function App({ Component, pageProps }) {
+	const router = useRouter()
+	extend({ OrbitControls })
+
+	return (
+		<CanvasProvider>
+			<AnimatePresence wait>
+				{/* <Stats showPanel={0} className='stats' /> */}
+				<Component {...pageProps} key={router.route} />
+			</AnimatePresence>
+		</CanvasProvider>
+	)
+}
